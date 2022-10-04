@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estilo.css') }}">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Tabla</title>
+</head>
+<body>
+    <!-- users = [
+    {'first_name' : 'Michael', 'last_name' : 'Choi'},
+    {'first_name' : 'John', 'last_name' : 'Supsupin'},
+    {'first_name' : 'Mark', 'last_name' : 'Guillen'},
+    {'first_name' : 'KB', 'last_name' : 'Tonel'} -->
+    <h1>Usuarios</h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Nombre Completo</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for users in usuarios %}
+                <tr>
+                    <td>{{ users['first_name'] }}</td>
+                    <td>{{ users['last_name'] }}</td>
+                    <td>{{ users['first_name'] }} {{ users['last_name'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
